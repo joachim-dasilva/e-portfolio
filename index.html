@@ -28,12 +28,13 @@
 
 				<!--Scroll -->
 					<div id="scrollButton">
-						<a href="#" id="arrow-up"><img src="images/arrow.png"></a>
-						<a href="#" id="arrow-down"><img src="images/arrow.png"></a>
+						<a href="#" id="arrow-up"><img src="images/arrowup.png"></a>
+						<a href="#" id="arrow-down"><img src="images/arrowdown.png"></a>
 					</div>
 					<style type="text/css">
 						html{
 							overflow-y: hidden; 
+							overflow-x: hidden;
 						}
 						#scrollButton{
 							position: fixed;
@@ -42,12 +43,15 @@
 							right: 10px;
 							z-index: 1000;	
 						}
-						#arrow-down img{
-							transform: rotate(-90deg);
+
+						#scrollButton a{
+						 	border-bottom: none;
+						 	
 						}
 
-						#arrow-up img{
-							transform: rotate(90deg);
+						#arrow-down img:hover, #arrow-up img:hover{
+							transform: scale(1.2);
+							background-color: rgba(100, 100, 100, 0.3);
 						}
 
 						#arrow-down img, #arrow-up img{
@@ -55,21 +59,20 @@
 							padding: 5px;
 							border: solid 2px white;
 							border-radius: 50%;
+							transition: all .2s ease-in-out;
 						}
 
-						#arrow-down img:hover{
-							background-color: rgba(100, 100, 100, 0.2);
-						}
 					</style>
 				<!-- Menu -->
 					<nav id="menu">
 						<div class="inner">
 							<h2>Menu</h2>
 							<ul class="links">
-								<li><a href="#one">☺ Ma Présentation</a></li>
-								<li><a href="#two">✍ Mes Compétences</a></li>
-								<li><a href="#three">⌚ Mon Expérience</a></li>
-								<li><a href="#four">☀ Mes projets</a></li>
+								<li><a href="index.html" style="font-family: Raleway, Helvetica, sans-serif;font-weight: 700;">E-PORTFOLIO - ACCUEIL</a></li>
+								<li><a href="presentation.html">☺ Ma Présentation</a></li>
+								<li><a href="competences.html">✍ Mes Compétences</a></li>
+								<li><a href="experience.html">⌚ Mon Expérience</a></li>
+								<li><a href="projets.html">☀ Mes projets</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -93,11 +96,30 @@
 							</ul>
 						</div>
 					</section>
+					<div id="background-cv"></div>
 					<div class="cv-pdf" id="myCV">
 						<iframe src="cv.pdf"></iframe>
-						<a href="#" id="close" onclick="closeCV()">X</a>
+						<a href="#" id="close" onclick="closeCV()"><img src="images/close.png"></a>
 					</div>
 					<style type="text/css">
+						  #background-cv {
+						  	display: none;
+						    position: fixed;
+						    width: 100%;
+						    height: 100%;
+						    left: 0;
+						    top: 0;
+						    background-image: linear-gradient(to top, rgba(46, 65, 49, 0.8), rgba(46, 65, 49, 0.8)), url("images/bg.jpg");
+						    z-index: 999;
+						  }
+						.logo img:hover{
+							transform: scale(1.1);
+						}
+
+						.logo img{
+							transition: all .2s ease-in-out;
+						}
+
 						#banner ul li{
 							list-style: none;
 							display: inline;
@@ -106,7 +128,7 @@
 							margin: 4ex 0;
 						}
 						#banner ul li:hover{
-							background-color: rgba(4, 4, 4, 0.125);
+							background-color: rgba(100, 100, 100, 0.3);
 						}
 						#banner ul li a{
 							border-bottom: 0;
@@ -124,13 +146,27 @@
 						.cv-pdf iframe{
 							height: 90%;
 							width: 90%;
+							border: solid 2px white;
 						}
 
 						.cv-pdf #close {
 							position: fixed;
-							font-size: 100px;
-							padding:0px 25px;
-							border: ridge 2px white;
+							border-bottom: none;
+						}
+
+
+						.cv-pdf #close img{
+							margin-left: 30%;
+							width:50%;
+							padding: 5%;
+							border: solid 2px white;
+							border-radius: 50%;
+							transition: all .2s ease-in-out;
+						}
+
+						.cv-pdf #close img:hover{
+							transform: scale(1.2);
+							background-color: rgba(100, 100, 100, 0.3);
 						}
 					</style>
 					<script type="text/javascript">
@@ -138,6 +174,7 @@
 							$("#myCV").fadeIn( "slow", function() {
 								document.getElementById("myCV").style['display'] = "block";
 								document.getElementById("header").style['display'] = "none";
+								document.getElementById("background-cv").style['display'] = "block";
   							});
   							
 						}
@@ -145,6 +182,7 @@
 							$("#myCV").fadeOut( "slow", function() {
 								document.getElementById("myCV").style['display'] = "none";
 								document.getElementById("header").style['display'] = "block";
+								document.getElementById("background-cv").style['display'] = "none";
   							});
   							
 						}
@@ -172,7 +210,7 @@
 									<div class="content">
 										<h2 class="major">✍ Mes Compétences</h2>
 										<p>Description.</p>
-										<a href="competence.html" class="special">Voir</a>
+										<a href="competences.html" class="special">Voir</a>
 									</div>
 								</div>
 							</section>
@@ -196,32 +234,32 @@
 									<p>Description.</p>
 									<section class="features">
 										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<a href="projets.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
 											<h3 class="major">Projet 1</h3>
 											<p>Description.</p>
-											<a href="#" class="special">En savoir plus</a>
+											<a href="projets.html" class="special">En savoir plus</a>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+											<a href="projets.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
 											<h3 class="major">Projet 2</h3>
 											<p>Description.</p>
-											<a href="#" class="special">En savoir plus</a>
+											<a href="projets.html" class="special">En savoir plus</a>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+											<a href="projets.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
 											<h3 class="major">Projet 3</h3>
 											<p>Description.</p>
-											<a href="#" class="special">En savoir plus</a>
+											<a href="projets.html" class="special">En savoir plus</a>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<a href="projets.html" class="image"><img src="images/pic07.jpg" alt="" /></a>
 											<h3 class="major">Projet 4</h3>
 											<p>Description.</p>
-											<a href="#" class="special">En savoir plus</a>
+											<a href="projets.html" class="special">En savoir plus</a>
 										</article>
 									</section>
 									<ul class="actions">
-										<li><a href="#" class="button">Afficher tous les projets</a></li>
+										<li><a href="projets.html" class="button">Afficher tous les projets</a></li>
 									</ul>
 								</div>
 							</section>
