@@ -26,14 +26,8 @@
 						</nav>
 					</header>
 
-				<!--Scroll -->
-					<div id="scrollButton">
-						<a href="#" id="arrow-up"><img src="images/arrowup.png"></a>
-						<a href="#" id="arrow-down"><img src="images/arrowdown.png"></a>
-					</div>
 					<style type="text/css">
 						html{
-							overflow-y: hidden; 
 							overflow-x: hidden; 
 						}
 
@@ -45,32 +39,6 @@
 							transition: all .2s ease-in-out;
 						
 						}
-
-						#scrollButton{
-							position: fixed;
-							bottom: 10px;
-							right: 10px;
-							z-index: 1000;	
-						}
-
-						#scrollButton a{
-						 	border-bottom: none;
-						 	
-						}
-
-						#arrow-down img:hover, #arrow-up img:hover{
-							transform: scale(1.2);
-							background-color: rgba(100, 100, 100, 0.3);
-						}
-
-						#arrow-down img, #arrow-up img{
-							width: 60px;
-							padding: 5px;
-							border: solid 2px white;
-							border-radius: 50%;
-							transition: all .2s ease-in-out;
-						}
-
 					</style>
 				<!-- Menu -->
 					<nav id="menu">
@@ -98,6 +66,10 @@
 							<div class="wrapper">
 								<div class="inner">
 									<h3 class="major">Parcours Scolaire</h3>
+									<img style="margin-top:10px;transform: rotate(1deg);width: 100%" src="images/parcoursscolaire.png"/>
+									<section id="one" style="padding-top:60px">
+										<h3 class="major">Experience Professionnelle</h3>
+									</section>
 								</div>
 							</div>
 
@@ -149,7 +121,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				var currentSection = "#banner";
 				$(document).ready(function(){
 				  $(".banner-menu-item").on('click', function(event) {
 				    if (this.hash !== "") {
@@ -160,43 +131,7 @@
 				      }, 800, function(){
 				        window.location.hash = hash;
 				      });
-				      currentSection = hash;
-				      	if(currentSection=="#banner"){
-				      	document.getElementById("scrollButton").style['display'] = "none";
-				      } else{
-				      	document.getElementById("scrollButton").style['display'] = "block";
-				      }
 				    }
-				  });
-				  $("#arrow-down").on('click', function(event) {	
-				      event.preventDefault();
-				      var hash = "";
-				      	if(currentSection=="#banner"){
-								hash = "#one";
-							} else if(currentSection=="#one"){
-								hash = "#footer";
-							}
-				      $('html').animate({
-				        scrollTop: $(hash).offset().top
-				      }, 800, function(){
-				        window.location.hash = hash;
-				      });
-				      currentSection = hash;
-				  });
-				  $("#arrow-up").on('click', function(event) {	
-				      event.preventDefault();
-				      var hash = "";
-				      	if(currentSection=="#footer"){
-								hash = "#one";
-							} else if(currentSection=="#one"){
-								hash = "#banner";
-							}
-				      $('html').animate({
-				        scrollTop: $(hash).offset().top
-				      }, 800, function(){
-				        window.location.hash = hash;
-				      });
-				      currentSection = hash;
 				  });
 				});
 

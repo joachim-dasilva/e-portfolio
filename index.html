@@ -25,43 +25,10 @@
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
-
-				<!--Scroll -->
-					<div id="scrollButton">
-						<a href="#" id="arrow-up"><img src="images/arrowup.png"></a>
-						<a href="#" id="arrow-down"><img src="images/arrowdown.png"></a>
-					</div>
 					<style type="text/css">
 						html{
-							overflow-y: hidden; 
 							overflow-x: hidden;
 						}
-						#scrollButton{
-							position: fixed;
-							display: none;
-							bottom: 10px;
-							right: 10px;
-							z-index: 1000;	
-						}
-
-						#scrollButton a{
-						 	border-bottom: none;
-						 	
-						}
-
-						#arrow-down img:hover, #arrow-up img:hover{
-							transform: scale(1.2);
-							background-color: rgba(100, 100, 100, 0.3);
-						}
-
-						#arrow-down img, #arrow-up img{
-							width: 60px;
-							padding: 5px;
-							border: solid 2px white;
-							border-radius: 50%;
-							transition: all .2s ease-in-out;
-						}
-
 					</style>
 				<!-- Menu -->
 					<nav id="menu">
@@ -197,7 +164,7 @@
 									<a href="#" class="image"><img src="images/presentationlogo.png" alt="" /></a>
 									<div class="content">
 										<h2 class="major">☺ Ma Présentation</h2>
-										<p>Présentation textuelle, Nuage de mots, ...</p>
+										<p>Présentation textuelle & Nuages de mots</p>
 										<a href="presentation.html" class="special">Voir</a>
 									</div>
 								</div>
@@ -209,7 +176,7 @@
 									<a href="#" class="image"><img src="images/competencelogo.png" alt="" /></a>
 									<div class="content">
 										<h2 class="major">✍ Mes Compétences</h2>
-										<p>Description.</p>
+										<p>Compétences & Logiciels maitrisés & Langues</p>
 										<a href="competences.html" class="special">Voir</a>
 									</div>
 								</div>
@@ -221,7 +188,7 @@
 									<a href="#" class="image"><img src="images/experiencelogo.png" alt="" /></a>
 									<div class="content">
 										<h2 class="major">⌚ Mon Expérience</h2>
-										<p>Description.</p>
+										<p>Parcours Scolaire & Expérience Professionnelle</p>
 										<a href="experience.html" class="special">Voir</a>
 									</div>
 								</div>
@@ -231,7 +198,7 @@
 							<section id="four" class="wrapper alt style1">
 								<div class="inner">
 									<h2 class="major">☀ Mes projets</h2>
-									<p>Description.</p>
+									<p>Liste de mes projets.</p>
 									<section class="features">
 										<article>
 											<a href="projets.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
@@ -312,7 +279,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				var currentSection = "#banner";
 				$(document).ready(function(){
 				  $(".banner-menu-item").on('click', function(event) {
 				    if (this.hash !== "") {
@@ -323,65 +289,7 @@
 				      }, 800, function(){
 				        window.location.hash = hash;
 				      });
-				      currentSection = hash;
-				      	if(currentSection=="#banner"){
-				      	document.getElementById("scrollButton").style['display'] = "none";
-				      } else{
-				      	document.getElementById("scrollButton").style['display'] = "block";
-				      }
 				    }
-				  });
-				  $("#arrow-down").on('click', function(event) {	
-				      event.preventDefault();
-				      var hash = "";
-				      	if(currentSection=="#banner"){
-								hash = "#one";
-							} else if(currentSection=="#one"){
-								hash = "#two";
-							} else if(currentSection=="#two"){
-								hash = "#three";
-							} else if(currentSection=="#three"){
-								hash = "#four";
-							} else if(currentSection=="#four"){
-								hash = "#footer";
-							} 
-				      $('html').animate({
-				        scrollTop: $(hash).offset().top
-				      }, 800, function(){
-				        window.location.hash = hash;
-				      });
-				      currentSection = hash;
-				      if(currentSection=="#banner"){
-				      	document.getElementById("scrollButton").style['display'] = "none";
-				      } else{
-				      	document.getElementById("scrollButton").style['display'] = "block";
-				      }
-				  });
-				  $("#arrow-up").on('click', function(event) {	
-				      event.preventDefault();
-				      var hash = "";
-				      	if(currentSection=="#footer"){
-								hash = "#four";
-							} else if(currentSection=="#one"){
-								hash = "#banner";
-							} else if(currentSection=="#two"){
-								hash = "#one";
-							} else if(currentSection=="#three"){
-								hash = "#two";
-							} else if(currentSection=="#four"){
-								hash = "#three";
-							} 
-				      $('html').animate({
-				        scrollTop: $(hash).offset().top
-				      }, 800, function(){
-				        window.location.hash = hash;
-				      });
-				      currentSection = hash;
-				      if(currentSection=="#banner"){
-				      	document.getElementById("scrollButton").style['display'] = "none";
-				      } else{
-				      	document.getElementById("scrollButton").style['display'] = "block";
-				      }
 				  });
 				});
 
