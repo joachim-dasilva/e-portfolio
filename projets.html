@@ -26,14 +26,8 @@
 						</nav>
 					</header>
 
-				<!--Scroll -->
-					<div id="scrollButton">
-						<a href="#" id="arrow-up"><img src="images/arrowup.png"></a>
-						<a href="#" id="arrow-down"><img src="images/arrowdown.png"></a>
-					</div>
 					<style type="text/css">
 						html{
-							overflow-y: hidden; 
 							overflow-x: hidden; 
 						}
 
@@ -45,32 +39,6 @@
 							transition: all .2s ease-in-out;
 						
 						}
-
-						#scrollButton{
-							position: fixed;
-							bottom: 10px;
-							right: 10px;
-							z-index: 1000;	
-						}
-
-						#scrollButton a{
-						 	border-bottom: none;
-						 	
-						}
-
-						#arrow-down img:hover, #arrow-up img:hover{
-							transform: scale(1.2);
-							background-color: rgba(100, 100, 100, 0.3);
-						}
-
-						#arrow-down img, #arrow-up img{
-							width: 60px;
-							padding: 5px;
-							border: solid 2px white;
-							border-radius: 50%;
-							transition: all .2s ease-in-out;
-						}
-
 					</style>
 				<!-- Menu -->
 					<nav id="menu">
@@ -78,10 +46,10 @@
 							<h2>Menu</h2>
 							<ul class="links">
 								<li><a href="index.html" style="font-family: Raleway, Helvetica, sans-serif;font-weight: 700;">E-PORTFOLIO - ACCUEIL</a></li>
-								<li><a href="presentation.html">☺ Ma Présentation</a></li>
-								<li><a href="competences.html">✍ Mes Compétences</a></li>
-								<li><a href="experience.html">⌚ Mon Expérience</a></li>
-								<li><a href="projets.html">☀ Mes projets</a></li>
+								<li><a href="presentation.html">Ma Présentation</a></li>
+								<li><a href="competences.html">Mes Compétences</a></li>
+								<li><a href="experience.html">Mon Expérience</a></li>
+								<li><a href="projets.html">Mes projets</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -95,48 +63,46 @@
 					</section>
 
 				<!-- Content -->
+				<section id="four">
 							<div class="wrapper">
 								<div class="inner">
 									<section class="wrapper alt style1">
 								<div class="inner">
 									<h2 class="major">Projets</h2>
-									<p>Description.</p>
 									<section class="features">
 										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Projet 1</h3>
-											<p>Description.</p>
-											<a href="#" class="special">En savoir plus</a>
+											<a href="projets/projet1.html" class="image"><img src="images/projet1.png" alt="" /></a>
+											<h3 class="major">Audit de la consommation énergétique du lycée Auguste Loubatières</h3>
+											<p>Projet réalisé avec trois personnes pour le baccalauréat STI2D spécialité Energie et environnement.</p>
+											<a href="projets/projet1.html" class="special">En savoir plus</a>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Projet 2</h3>
-											<p>Description.</p>
-											<a href="#" class="special">En savoir plus</a>
+											<a href="projets/projet2.html" class="image"><img src="images/projet2.png" alt="" /></a>
+											<h3 class="major">Mon 1er site web en html/css</h3>
+											<p>Création de mon premier site web html et css en groupe lors de ma première année de DUT informatique.</p>
+											<a href="projets/projet2.html" class="special">En savoir plus</a>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Projet 3</h3>
-											<p>Description.</p>
-											<a href="#" class="special">En savoir plus</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Projet 4</h3>
-											<p>Description.</p>
-											<a href="#" class="special">En savoir plus</a>
+											<a href="projets/projet3.html" class="image"><img src="images/projet3.png" alt="" /></a>
+											<h3 class="major">Escape Game avec l'outil javafx</h3>
+											<p>Création d'un escape game par groupe avec l'outil javafx lors de ma première année de DUT informatique.</p>
+											<a href="projets/projet3.html" class="special">En savoir plus</a>
 										</article>
 									</section>
-									<ul class="actions">
-										<li><a href="#" class="button">Afficher tous les projets</a></li>
-									</ul>
 								</div>
 							</section>
-
 								</div>
 							</div>
-
 					</section>
+							<style type="text/css">
+								#four article img{
+									opacity: 0.6;
+								}
+
+								#four article img:hover{
+									opacity: 1;
+								}
+							</style>
 
 				<!-- Footer -->
 					<section id="footer">
@@ -184,7 +150,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				var currentSection = "#banner";
 				$(document).ready(function(){
 				  $(".banner-menu-item").on('click', function(event) {
 				    if (this.hash !== "") {
@@ -195,43 +160,7 @@
 				      }, 800, function(){
 				        window.location.hash = hash;
 				      });
-				      currentSection = hash;
-				      	if(currentSection=="#banner"){
-				      	document.getElementById("scrollButton").style['display'] = "none";
-				      } else{
-				      	document.getElementById("scrollButton").style['display'] = "block";
-				      }
 				    }
-				  });
-				  $("#arrow-down").on('click', function(event) {	
-				      event.preventDefault();
-				      var hash = "";
-				      	if(currentSection=="#banner"){
-								hash = "#one";
-							} else if(currentSection=="#one"){
-								hash = "#footer";
-							}
-				      $('html').animate({
-				        scrollTop: $(hash).offset().top
-				      }, 800, function(){
-				        window.location.hash = hash;
-				      });
-				      currentSection = hash;
-				  });
-				  $("#arrow-up").on('click', function(event) {	
-				      event.preventDefault();
-				      var hash = "";
-				      	if(currentSection=="#footer"){
-								hash = "#one";
-							} else if(currentSection=="#one"){
-								hash = "#banner";
-							}
-				      $('html').animate({
-				        scrollTop: $(hash).offset().top
-				      }, 800, function(){
-				        window.location.hash = hash;
-				      });
-				      currentSection = hash;
 				  });
 				});
 

@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DA SILVA Joachim → Mes Projets</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="icon" type="image/png" href="../images/logo.png" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="../index.html">DA SILVA Joachim → E-Portfolio</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+					<style type="text/css">
+						html{
+							overflow-x: hidden; 
+						}
+
+						.logo img:hover{
+							transform: scale(1.1);
+						}
+
+						.logo img{
+							transition: all .2s ease-in-out;
+						
+						}
+
+					</style>
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="../index.html" style="font-family: Raleway, Helvetica, sans-serif;font-weight: 700;">E-PORTFOLIO - ACCUEIL</a></li>
+								<li><a href="../presentation.html">Ma Présentation</a></li>
+								<li><a href="../competences.html">Mes Compétences</a></li>
+								<li><a href="../experience.html">Mon Expérience</a></li>
+								<li><a href="../projets.html">Mes projets</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner" style="padding:3%">
+						<div class="inner">
+							<div class="logo"><a href="../index.html" style="border-bottom: 0;"><img src="../images/logo.png"></a></div>
+						</div>
+					</section>
+
+				<!-- Content -->
+					<section id="content">
+						<div class="wrapper">
+							<div class="inner">
+								<h3 class="major">Nom du projet</h3>
+								<p>Audit de la consommation énergétique du lycée Auguste Loubatières</p>
+								<h3 class="major">Durée</h3>
+								<p>6 mois - (2018)</p>
+								<h3 class="major">Contexte</h3>
+								<p>...</p>
+								<h3 class="major">Tâche</h3>
+								<p>...</p>
+								<h3 class="major">Commentaire</h3>
+								<p>...</p>
+								<h3 class="major">Ressources Supplémentaires</h3>
+								<a id="buttonRapport" href="#" onclick="openRapport()"><p>Cliquer pour visualiser le rapport du projet</p></a>
+							</div>
+						</div>
+					</section>
+					<div id="background-rapport"></div>
+					<div class="rapport-pdf" id="myRapport">
+						<iframe src="rapport1.pdf"></iframe>
+						<a href="#" id="close" onclick="closeRapport()"><img src="../images/close.png"></a>
+					</div>
+					<style type="text/css">
+						  #background-rapport {
+						  	display: none;
+						    position: fixed;
+						    width: 100%;
+						    height: 100%;
+						    left: 0;
+						    top: 0;
+						    background-image: linear-gradient(to top, rgba(46, 65, 49, 0.8), rgba(46, 65, 49, 0.8)), url("../images/bg.jpg");
+						    z-index: 999;
+						  }
+
+						.rapport-pdf{
+							display:none;
+							margin-top:5%;
+							margin-left: 10%;
+							height: 90%;
+							width: 90%;
+							position: fixed;
+							top:0;
+							z-index: 1000;
+						}
+						.rapport-pdf iframe{
+							height: 90%;
+							width: 90%;
+							border: solid 2px white;
+						}
+
+						.rapport-pdf #close {
+							position: fixed;
+							border-bottom: none;
+						}
+
+
+						.rapport-pdf #close img{
+							margin-left: 30%;
+							width:50%;
+							padding: 5%;
+							border: solid 2px white;
+							border-radius: 50%;
+							transition: all .2s ease-in-out;
+						}
+
+						.rapport-pdf #close img:hover{
+							transform: scale(1.2);
+							background-color: rgba(100, 100, 100, 0.3);
+						}
+					</style>
+					<script type="text/javascript">
+						function openRapport() {
+							$("#myRapport").fadeIn( "slow", function() {
+								document.getElementById("myRapport").style['display'] = "block";
+								document.getElementById("header").style['display'] = "none";
+								document.getElementById("background-rapport").style['display'] = "block";
+  							});
+  							
+						}
+						function closeRapport() {
+							$("#myRapport").fadeOut( "slow", function() {
+								document.getElementById("myRapport").style['display'] = "none";
+								document.getElementById("header").style['display'] = "block";
+								document.getElementById("background-rapport").style['display'] = "none";
+  							});
+  							
+						}
+					</script>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">CONTACT</h2>
+							<p>Vous pouvez me contacter à l'aide des informations suivantes si vous le souhaiter.</p>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Nom</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">E-mail</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Envoyer le message" /></li>
+								</ul>
+							</form>
+							<ul class="contact">
+								<li></li>
+								<li class="icon solid fa-home">Agde, Occitanie - France</li>
+								<li class="icon solid fa-phone">07 83 79 72 61</li>
+								<li class="icon solid fa-envelope"><a href="#">dasilvajoachim34@gmail.com</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; DA SILVA Joachim. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script>
+				$(document).ready(function(){
+				  $(".banner-menu-item").on('click', function(event) {
+				    if (this.hash !== "") {
+				      event.preventDefault();
+				      var hash = this.hash;
+				      $('html').animate({
+				        scrollTop: $(hash).offset().top
+				      }, 800, function(){
+				        window.location.hash = hash;
+				      });
+				    }
+				  });
+				});
+
+			</script>
+	</body>
+</html>
