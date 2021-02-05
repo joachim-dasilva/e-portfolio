@@ -1,9 +1,6 @@
 E-PORTFOLIO
 --
-Ma Présentation (Lien : )
-Mes Compétences (Lien : )
-Mon Expérience (Lien : )
-Mes Projets (Lien : )
+https://joachim-dasilva.github.io/portfolio/
 --
 CONTACT
 dasilvajoachim34@gmail.com
